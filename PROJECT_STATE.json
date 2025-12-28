@@ -1,0 +1,177 @@
+{
+  "project": "In-house Digital Signage System (Patient Room TVs)",
+  "checkpoint_name": "Stable_Zone_Player_Working_Before_SpaCards_Refactor",
+  "date_utc": "2025-12-28",
+  "current_task": "Spa Cards Widget (NOT started / do not refactor yet)",
+  "status_summary": {
+    "system_running": true,
+    "player_page_working": true,
+    "zones_rendering": true,
+    "main_zone_rotating_content": true,
+    "right_zone_youtube_instagram": true,
+    "footer_rss_ticker_basic": true,
+    "remaining_issues": [
+      "Sometimes a black slide appears with only 5 golden stars (empty review content)",
+      "Some RSS sources failing due to 403/404/SSL issues; ticker still works with at least one source",
+      "Header bar occasionally not stretching perfectly to the right edge"
+    ]
+  },
+
+  "architecture": {
+    "server": {
+      "language": "Python",
+      "framework": "FastAPI",
+      "runner": "uvicorn",
+      "port": 8080,
+      "runs_on": "Windows 10/11 desktop (behind firewall; same LAN as players)"
+    },
+    "player": {
+      "ui": "HTML + JS",
+      "runs_on": [
+        "Desktop Chrome",
+        "Raspberry Pi (future)",
+        "Windows mini PC (future)"
+      ],
+      "mode": "kiosk/fullscreen recommended",
+      "endpoint": "/player-zones/{screen_id}"
+    },
+    "storage": {
+      "media_files": "local server folder signage-server/media",
+      "config_files": [
+        "screens.json",
+        "zoned_demo.json"
+      ]
+    }
+  },
+
+  "folder_structure": {
+    "root": "signage-server/",
+    "files": {
+      "app.py": "FastAPI server + widget endpoints",
+      "screens.json": "list of screen IDs and office rotation data",
+      "zoned_demo.json": "content plan for zones",
+      "web/player_zones.html": "player page HTML",
+      "web/player_zones.js": "player page logic",
+      "web/player_zones.css": "theme styling (dark minimal)"
+    },
+    "media_folder": "signage-server/media"
+  },
+
+  "screens": {
+    "rotation_mode": "A",
+    "layout": "layout-horizontal_4zone_v1",
+    "screen_id_example": "canton-tv3",
+    "screen_config_source": "screens.json"
+  },
+
+  "layout_spec": {
+    "layout_id": "layout-horizontal_4zone_v1",
+    "zones": {
+      "header": {
+        "left": "Office name + address (from screens.json)",
+        "center": "Call/Text to book + phone number",
+        "right": "Logo (based on office type)"
+      },
+      "main": "Large left zone (images/videos/reviews/spa cards etc.)",
+      "right": "Vertical right zone (YouTube shorts OR Instagram embed OR local videos)",
+      "footer": "RSS ticker + optional static messages/images"
+    },
+    "theme": {
+      "style": "minimal clean dark",
+      "header_bg": "black",
+      "zone_cards": "rounded corners, subtle shadows",
+      "no_clutter": true
+    }
+  },
+
+  "logos": {
+    "medical_group": "https://storage.googleapis.com/treatspace-prod-media/logo_thumb/p-2953/logowebpNone.webp",
+    "med_spa": "https://storage.googleapis.com/treatspace-prod-media/logo_thumb/p-2957/logowebpNone.webp",
+    "peds": "https://storage.googleapis.com/treatspace-prod-media/logo_thumb/p-3020/logowebpNone.webp",
+    "local_logo_files_present": [
+      "pmgSPALOGO.jpg",
+      "pmgPrimaryCareLogo.jpg",
+      "pmgPedsLogo.jpg"
+    ]
+  },
+
+  "content_sources": {
+    "gallery_images": {
+      "medical_group_1_to_19": "https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2953/img-{n}.jpeg",
+      "peds_4_to_8": "https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2953/PMG_Peds{n}.jpeg"
+    },
+    "instagram_public": {
+      "handle": "@prestigemedspas",
+      "url": "https://www.instagram.com/prestigemedspas/?hl=en",
+      "rule": "No login, public only"
+    },
+    "youtube_shorts": {
+      "channel": "Prestige Medical Group",
+      "channel_id": "UCInP4-sfglG9bYMwjGDlG4w",
+      "shorts_url": "https://www.youtube.com/@PrestigeMedGroup/shorts",
+      "rule": "Randomize video selection"
+    },
+    "reviews_vendor_socialclimb": {
+      "base_iframe": "https://iframe.socialclimb.com/iframe/f2e10fc1-b3b3-4349-afcd-e9507383a767/reviews?loc={loc}",
+      "averages_iframe": "https://iframe.socialclimb.com/iframe/f2e10fc1-b3b3-4349-afcd-e9507383a767/averages?loc={loc}",
+      "notes": [
+        "Full iframe works but single review mode sometimes shows only stars",
+        "Need to use SocialClimb API docs to render cleaner cards"
+      ],
+      "docs": "https://docs.socialclimb.com/api/website/"
+    }
+  },
+
+  "rss_widget": {
+    "endpoint": "/api/widgets/rss_ticker",
+    "status": "working with partial feeds",
+    "issue": "some feeds return 403/404/SSL verify errors",
+    "desired_behavior": [
+      "ticker should pull from multiple sources",
+      "fallback to message if none available",
+      "randomize headlines"
+    ]
+  },
+
+  "local_media_files_present": {
+    "images": [
+      "welcome.jpg",
+      "promo.jpg",
+      "peds1.jpg",
+      "peds2.jpg"
+    ],
+    "videos": [
+      "handwash.mp4",
+      "Skin Classic McKinzi.mp4",
+      "cannula facts McKinzi.mp4",
+      "Caitlyn Cosmetic Injectables and Sasha.mp4",
+      "botox funny McKinzi (1).mp4",
+      "bff post McKinzi.mp4"
+    ]
+  },
+
+  "running_instructions": {
+    "activate_env": ".venv\\Scripts\\activate",
+    "run_server": "uvicorn app:app --host 0.0.0.0 --port 8080",
+    "test_manifest": "http://127.0.0.1:8080/api/manifest/canton-tv3",
+    "test_player": "http://127.0.0.1:8080/player-zones/canton-tv3?debug=1",
+    "note": "Player must always be loaded with /player-zones/ not /player-zones (missing screen_id causes Not Found)"
+  },
+
+  "rules_set_by_user": [
+    "Always provide FULL file code for any file that needs to be changed — never partial snippets.",
+    "Always give step-by-step instructions for what to close/stop and what to start.",
+    "Keep theme clean, minimalistic, no clutter, easy to read from distance.",
+    "No Instagram login; public-only embedding or safe scraping methods only.",
+    "Randomize content order on each startup (images, YouTube, Instagram, reviews).",
+    "No headings like 'Videos' or 'Instagram' — keep zones clean.",
+    "Work modularly: test one TV, then add TVs, then add offices."
+  ],
+
+  "next_tasks": [
+    "Fix missing review card bug (black slide with just 5 gold stars).",
+    "Fix RSS feed sources (update URLs; add safe fallback feeds).",
+    "Implement Spa Cards redesign using MedSpa website look/feel + background images per category.",
+    "Add medspa service categories as cards using local images: Facial_Treatments.jpg, Injectables.jpg, Body_Procedures.jpg, Laser_Treatments.jpg, PRP.jpg."
+  ]
+}

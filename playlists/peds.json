@@ -1,0 +1,23 @@
+{
+  "playlist_id": "pl_peds_v1",
+  "name": "Peds Playlist",
+  "loop": true,
+  "items": [
+    {
+      "item_id": "it_peds_001",
+      "asset_id": "peds1.jpg",
+      "type": "image",
+      "duration_sec": 8,
+      "fit": "contain",
+      "background": "#000000"
+    },
+    {
+      "item_id": "it_peds_002",
+      "asset_id": "peds2.jpg",
+      "type": "image",
+      "duration_sec": 8,
+      "fit": "contain",
+      "background": "#000000"
+    }
+  ]
+}

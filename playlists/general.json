@@ -1,0 +1,30 @@
+{
+  "playlist_id": "pl_general_v2",
+  "name": "General Playlist (Image + Video)",
+  "loop": true,
+  "items": [
+    {
+      "item_id": "it_001",
+      "asset_id": "welcome.jpg",
+      "type": "image",
+      "duration_sec": 8,
+      "fit": "contain",
+      "background": "#000000"
+    },
+    {
+      "item_id": "it_002",
+      "asset_id": "handwash.mp4",
+      "type": "video",
+      "mute": true,
+      "fit": "cover"
+    },
+    {
+      "item_id": "it_003",
+      "asset_id": "promo.jpg",
+      "type": "image",
+      "duration_sec": 8,
+      "fit": "contain",
+      "background": "#000000"
+    }
+  ]
+}

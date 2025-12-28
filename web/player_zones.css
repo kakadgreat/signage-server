@@ -1,0 +1,67 @@
+:root{
+  --bg:#050505;
+  --panel:#0f0f0f;
+  --panel2:#131313;
+  --text:#f2f2f2;
+  --muted:#bdbdbd;
+  --shadow: rgba(0,0,0,.45);
+  --radius:18px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif;}
+.screen{height:100%;display:flex;flex-direction:column;}
+
+.hdr{
+  height:140px;
+  padding:18px 34px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  background:linear-gradient(to bottom, rgba(0,0,0,.92), rgba(0,0,0,.72));
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.hdr-left{min-width:320px;}
+.hdr-title{font-size:40px;font-weight:800;letter-spacing:.2px;line-height:1;}
+.hdr-subtitle{margin-top:10px;color:var(--muted);font-size:16px;line-height:1.2;}
+.hdr-mid{text-align:center;flex:1;}
+.hdr-mid-top{color:var(--muted);font-size:18px;font-weight:600;letter-spacing:.3px;}
+.hdr-phone{font-size:44px;font-weight:900;margin-top:8px;letter-spacing:1px;}
+.hdr-right{width:320px;display:flex;justify-content:flex-end;}
+.hdr-logo{max-height:92px;max-width:280px;border-radius:10px;background:#fff;padding:10px;box-shadow:0 10px 30px var(--shadow);}
+
+.main{flex:1;display:grid;grid-template-columns: 1fr 380px;gap:18px;padding:18px 34px 0;}
+.zone{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 30px var(--shadow);}
+.zone-inner{height:100%;width:100%;display:flex;align-items:center;justify-content:center;}
+
+.zone-main{min-height:0;}
+.zone-right{min-height:0;}
+
+.ftr{
+  height:64px;
+  margin:18px 34px 18px;
+  border-top:1px solid rgba(255,255,255,.06);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.ticker{
+  width:100%;
+  white-space:nowrap;
+  overflow:hidden;
+  font-size:22px;
+  color:rgba(255,255,255,.92);
+  font-weight:700;
+  letter-spacing:.2px;
+}
+.ticker span{
+  display:inline-block;
+  padding-left:100%;
+  animation: ticker 35s linear infinite;
+}
+@keyframes ticker{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-100%)}
+}

@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "reviews-medspa-canton-list",
+      "type": "iframe",
+      "title": "MedSpa Reviews",
+      "src": "https://iframe.socialclimb.com/iframe/f2e10fc1-b3b3-4349-afcd-e9507383a767/reviews?loc=50334&limit=3",
+      "duration_sec": 16
+    },
+    {
+      "id": "reviews-all-list",
+      "type": "iframe",
+      "title": "All Locations Reviews",
+      "src": "https://iframe.socialclimb.com/iframe/f2e10fc1-b3b3-4349-afcd-e9507383a767/reviews?limit=3",
+      "duration_sec": 16
+    },
+    {
+      "id": "reviews-medspa-canton-avg",
+      "type": "iframe_card",
+      "title": "Patient Ratings",
+      "src": "https://iframe.socialclimb.com/iframe/f2e10fc1-b3b3-4349-afcd-e9507383a767/averages?loc=50334",
+      "duration_sec": 10
+    }
+  ]
+}

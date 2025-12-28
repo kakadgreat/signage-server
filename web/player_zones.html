@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Signage Player (Zones)</title>
+  <link rel="stylesheet" href="/web/player_zones.css"/>
+  <link rel="stylesheet" href="/web/spa_cards.css"/>
+</head>
+<body>
+  <div id="app" class="screen">
+    <header class="hdr">
+      <div class="hdr-left">
+        <div id="hdrTitle" class="hdr-title">Prestige</div>
+        <div id="hdrSub" class="hdr-subtitle"></div>
+      </div>
+      <div class="hdr-mid">
+        <div class="hdr-mid-top">Call or Text to Book Your Appointment</div>
+        <div id="hdrPhone" class="hdr-phone">706-692-9768</div>
+      </div>
+      <div class="hdr-right">
+        <img id="hdrLogo" class="hdr-logo" alt="logo"/>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="zone zone-main">
+        <div id="mainZone" class="zone-inner"></div>
+      </section>
+
+      <aside class="zone zone-right">
+        <div id="rightZone" class="zone-inner"></div>
+      </aside>
+    </main>
+
+    <footer class="ftr">
+      <div id="footerTicker" class="ticker">Loading news...</div>
+    </footer>
+  </div>
+
+  <script src="/web/player_zones.js"></script>
+</body>
+</html>

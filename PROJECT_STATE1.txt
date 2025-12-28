@@ -1,0 +1,289 @@
+============================================================
+PROJECT_STATE.txt
+Continue from CURRENT TASK: Spa Cards Widget
+============================================================
+PROJECT: In-House Digital Signage System (Prestige Medical Group)
+MODULE FOCUS: Module 5 (Player) — Zoned Player + Widgets
+LAST UPDATED: 2025-12-27
+CURRENT STAGE: Spa Cards Widget (Next)
+
+============================================================
+0) ROLE + GOAL
+============================================================
+You (ChatGPT) are acting as my software + hardware solution architect and senior full-stack engineer.
+We are building an in-house digital signage system that runs behind our firewall on a Windows PC today and later Raspberry Pi players in patient rooms.
+
+We are using a modular architecture and currently focusing on Module 5 (Player).
+
+============================================================
+1) NON-NEGOTIABLE RULES
+============================================================
+1) FULL-FILE CODE ONLY:
+   If any file needs to be created or changed, you MUST output the entire file contents.
+   No partial snippets. No patch fragments. This prevents copy/paste errors.
+
+2) STEP-BY-STEP RUN INSTRUCTIONS:
+   Always give clear steps: what to stop/close, what commands to run, what URL to test.
+
+3) MINIMALISTIC UI:
+   Clean, stable, readable from distance, no clutter.
+
+4) INTERNAL NETWORK ASSUMPTION:
+   System runs behind firewall; players are on same WiFi/hardwired LAN.
+   No cloud dependencies required for core playback.
+
+5) PUBLIC SOURCES ONLY:
+   Instagram/YouTube must work without login/tokens.
+
+6) NO PAID CMS:
+   We are building in-house specifically to avoid per-screen CMS fees.
+
+============================================================
+2) WHAT IS WORKING RIGHT NOW (CURRENT SYSTEM STATE)
+============================================================
+Backend:
+- FastAPI server running via uvicorn on Windows.
+
+Player (Zones):
+- Works at:
+  http://127.0.0.1:8080/player-zones/canton-tv3
+- Zoning layout:
+  Horizontal Layout (Header + Main + Right Sidebar + Footer)
+
+Header (Header A):
+- Black header with 3 areas:
+  Left:
+    Office name/address (rotates)
+  Center:
+    "Call or Text to Book Your Appointment"
+    Main phone number: 706-692-9768
+  Right:
+    Office logo (logo based on office type)
+
+Right Sidebar:
+- Rotates between Instagram public content + YouTube Shorts embed
+- No headings (clean)
+- Randomized order per startup
+
+Footer:
+- RSS ticker works and scrolls continuously
+- Many RSS feeds fail (403/404/SSL); currently CDC works
+- Needs improvement later (more stable RSS sources)
+
+Main Zone:
+- Plays images and mp4 videos
+- Plays SocialClimb review widgets (iframe-based)
+- Main playlist is shuffled on startup
+
+Bug Fix Completed:
+- Main zone + sidebar collapse bug fixed by:
+  Removing global absolute CSS
+  Applying absolute only to OUR media elements (.zone-media)
+- This stopped zones collapsing into thin lines.
+
+============================================================
+3) MEDIA FILES CURRENTLY IN /media
+============================================================
+handwash.mp4
+Skin Classic McKinzi.mp4
+cannula facts McKinzi.mp4
+Caitlyn Cosmetic Injectables and Sasha.mp4
+botox funny McKinzi (1).mp4
+bff post McKinzi.mp4
+promo.jpg
+welcome.jpg
+peds1.jpg
+peds2.jpg
+pmgSPALOGO.jpg
+pmgPrimaryCareLogo.jpg
+pmgPedsLogo.jpg
+
+============================================================
+4) LOGOS (REMOTE)
+============================================================
+Medical Group:
+https://storage.googleapis.com/treatspace-prod-media/logo_thumb/p-2953/logowebpNone.webp
+
+MedSpa:
+https://storage.googleapis.com/treatspace-prod-media/logo_thumb/p-2957/logowebpNone.webp
+
+Peds:
+https://storage.googleapis.com/treatspace-prod-media/logo_thumb/p-3020/logowebpNone.webp
+
+============================================================
+5) SOCIAL SOURCES (PUBLIC ONLY)
+============================================================
+Instagram public:
+https://www.instagram.com/prestigemedspas/?hl=en
+
+YouTube Shorts:
+channel_id: UCInP4-sfglG9bYMwjGDlG4w
+https://www.youtube.com/@PrestigeMedGroup/shorts
+
+============================================================
+6) KNOWN ISSUE (TO FIX LATER)
+============================================================
+SocialClimb widget sometimes shows a "stars only" black slide (no text).
+This is the averages widget intermittently failing.
+
+Planned fix:
+- Remove averages widget entirely
+- Show only review cards with larger font
+- Fewer reviews at once, repeat often
+- Randomize reviews
+
+============================================================
+7) FILES LAST MODIFIED (FULL REPLACEMENTS)
+============================================================
+- web/player_zones.html
+- web/player_zones.js
+
+These are currently stable and should not be edited without FULL FILE output.
+
+============================================================
+8) CURRENT TASK (NEXT STEP)
+============================================================
+Build Spa Cards Widget (DID YOU KNOW style) for main zone.
+
+Requirements:
+- Editable via JSON file (no code changes to add/edit cards)
+- Supports:
+  - images (local /media or remote URL)
+  - mp4 videos
+  - title + subtitle + bullet list
+  - tag/label (e.g. "Advanced MedSpa Service")
+  - minimal clean layout
+  - randomized order
+- Must appear in main playlist via widget_type "spa_cards"
+
+Expected new artifacts:
+1) data/spa_cards.json
+2) web/spa_cards.js
+3) web/spa_cards.css
+4) app.py updated to add /api/widgets/spa_cards endpoint
+5) web/player_zones.html updated to load spa css/js
+6) web/player_zones.js updated to support widget_type "spa_cards"
+7) Manifest updated to include:
+   { "type":"widget", "widget_type":"spa_cards", "duration_sec": 25 }
+
+============================================================
+9) AFTER SPA CARDS ARE WORKING (FUTURE WORK)
+============================================================
+- Build Primary Care cards (same template)
+- Build Pediatrics cards (same template)
+- Improve RSS feeds (replace failing ones with stable sources)
+- Harden SocialClimb reviews widget (remove averages)
+- Prep Raspberry Pi player deployment
+
+============================================================
+10) OUTPUT FORMAT REQUIRED FROM CHATGPT
+============================================================
+Must always follow:
+
+Step N: (description)
+Artifact N.X: filename + FULL file content
+Run/Test: exact commands and URLs
+
+Start by listing files to create/change for Spa Cards, then provide full file code for each, then exact run/test steps.
+
+============================================================
+END PROJECT_STATE 1 .txt
+============================================================
+
+# Signage System State (Prestige)
+
+## Current System
+- FastAPI server on Windows (local LAN behind firewall)
+- Player is browser-based and zoned
+- Screen mappings: screens.json
+- Zoned playlist: playlists/zoned_demo.json
+- Player page: /player-zones/{screen_id}
+- Manifest endpoint: /api/manifest/{screen_id}
+
+## Zones Layout
+- Header: office rotation (feeds/offices.json) + phone + logo
+- Main: playlist items (images, videos, widgets)
+- Sidebar: Instagram manual feed + YouTube latest shorts
+- Footer: RSS ticker + custom messages
+
+## Widgets Supported
+- reviews (SocialClimb iframes)
+- spa_cards (new widget from feeds/spa_cards.json)
+- rss_ticker
+
+## Important Rules
+- Always provide full file code (never partial)
+- Keep theme minimal, clean, black UI
+- Content should randomize on startup (main + sidebar)
+- No logins for IG; use manual/public only
+- YouTube embeds use channel RSS feed
+- Known issue: "black star-only review slide" sometimes appears
+
+## Current Task
+Spa Cards Widget
+- Added feeds/spa_cards.json
+- Added /api/widgets/spa_cards
+- Added widget handler in web/player_zones.js
+- Added spa_cards widget into playlists/zoned_demo.json
+
+============================================================
+MASTER PROMPT to resume in a new chat (COPY/PASTE)
+============================================================
+Use this prompt exactly:
+============================================================
+PROMPT:
+
+You are my software & hardware solution architect. We are building an in-house digital signage system for wall-mounted TVs in patient rooms across multiple offices. We are running a FastAPI signage server behind the firewall, and players are browser-based (Windows + Raspberry Pi planned).
+============================================================
+RULES:
+
+Always provide FULL CODE for any file that needs to change (never partial snippets).
+
+Always give step-by-step instructions: what to stop/close, what to edit, what to run, and what URL to test.
+
+Keep UI minimal and clean (black theme, high readability).
+
+Keep system modular: every feature should be a widget or module with a JSON-configurable data source.
+
+Randomize content order on startup for main zone + sidebar (YouTube and Instagram manual items).
+
+No logins for Instagram; only public/manual sources.
+============================================================
+CURRENT SYSTEM:
+
+FastAPI server app.py
+
+/api/manifest/{screen_id} serves playlist JSON
+
+Zoned player page: /player-zones/{screen_id}
+============================================================
+Files:
+
+screens.json maps screens to playlists and logos
+
+playlists/zoned_demo.json is current zoned playlist
+
+web/player_zones.html and web/player_zones.js run the zoned player
+============================================================
+Widgets:
+
+/api/widgets/rss_ticker
+
+/api/widgets/reviews_widgets (SocialClimb iframe widgets)
+
+/api/widgets/instagram_manual
+
+/api/widgets/youtube_latest
+
+/api/widgets/spa_cards (from feeds/spa_cards.json)
+============================================================
+KNOWN ISSUE:
+
+Sometimes review widget shows a black slide with only 5 golden stars (no text). We need to filter it out or improve rendering.
+============================================================
+CURRENT TASK:
+Continue from Spa Cards Widget. Spa cards should rotate in main zone as a widget (clean card design with large title and subtitle). Confirm they render correctly. Next steps after spa cards: fix star-only review issue, and improve review readability (fewer larger cards, rotated more often).
+============================================================
+Before coding:
+Ask me for any file uploads you need (app.py, player_zones.js, zoned_demo.json, reviews_widgets.json, etc.) if you cannot see them.
+

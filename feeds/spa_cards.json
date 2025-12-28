@@ -1,0 +1,59 @@
+{
+  "rotation_sec": 10,
+  "cards": [
+    {
+      "category": "Facial Treatments",
+      "title": "Hydrafacial",
+      "subtitle": "Deep cleansing + hydration for glowing skin.",
+      "image_url": "/media/promo.jpg"
+    },
+    {
+      "category": "Facial Treatments",
+      "title": "Vampire Facial",
+      "subtitle": "PRP facial rejuvenation for smooth, radiant skin.",
+      "image_url": "/media/promo.jpg"
+    },
+    {
+      "category": "Facial Treatments",
+      "title": "Chemical Peels",
+      "subtitle": "Brighten, smooth, and renew your skin tone.",
+      "image_url": "/media/promo.jpg"
+    },
+    {
+      "category": "Facial Treatments",
+      "title": "Dermaplaning",
+      "subtitle": "Exfoliation treatment for fresh, soft skin.",
+      "image_url": "/media/promo.jpg"
+    },
+    {
+      "category": "Facial Treatments",
+      "title": "Microneedling",
+      "subtitle": "Collagen stimulation for texture + scars + glow.",
+      "image_url": "/media/promo.jpg"
+    },
+    {
+      "category": "Injectables",
+      "title": "Botox",
+      "subtitle": "Smooth wrinkles and refresh your look.",
+      "image_url": "/media/promo.jpg"
+    },
+    {
+      "category": "Injectables",
+      "title": "Juvederm & Fillers",
+      "subtitle": "Restore volume, enhance lips and cheeks naturally.",
+      "image_url": "/media/promo.jpg"
+    },
+    {
+      "category": "Body Procedures",
+      "title": "Body Contouring (Evolve X)",
+      "subtitle": "Tone, tighten, and sculpt without surgery.",
+      "image_url": "/media/promo.jpg"
+    },
+    {
+      "category": "Laser Treatments",
+      "title": "Laser Hair Reduction",
+      "subtitle": "Smooth, hair-free skin with long-lasting results.",
+      "image_url": "/media/promo.jpg"
+    }
+  ]
+}

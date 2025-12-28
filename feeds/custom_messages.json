@@ -1,0 +1,19 @@
+{
+  "messages": [
+    {
+      "type": "text",
+      "text": "Need help? Ask our front desk about same-day availability.",
+      "priority": 1
+    },
+    {
+      "type": "text",
+      "text": "Follow us on Instagram: @PrestigeMedSpas",
+      "priority": 1
+    },
+    {
+      "type": "text",
+      "text": "Ask about our wellness & aesthetic services today.",
+      "priority": 1
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "layout_id": "layout-horizontal_4zone_v1",
+  "header_mode": "A",
+  "phone": "706-692-9768",
+  "main_items": [
+    {
+      "type": "spa_card",
+      "duration": 12,
+      "bg": "/media/Facial_Treatments.jpg",
+      "title": "Hydrafacial",
+      "subtitle": "Deep cleansing + hydration for glowing skin.",
+      "items": ["Vampire Facial", "Chemical Peels", "Dermaplaning", "Microneedling", "Threads"]
+    },
+    {
+      "type": "spa_card",
+      "duration": 12,
+      "bg": "/media/Injectables.jpg",
+      "title": "Injectables",
+      "subtitle": "Natural-looking results with expert placement.",
+      "items": ["Fillers", "Juvederm", "Restylane", "Sculptra", "Botox", "Dysport", "Kybella"]
+    },
+    {
+      "type": "spa_card",
+      "duration": 12,
+      "bg": "/media/Body_Procedures.jpg",
+      "title": "Body Procedures",
+      "subtitle": "Confidence-focused contouring and rejuvenation.",
+      "items": ["Body Contouring (Evolve X)", "Sculptra Butt Lift", "Vaginal Rejuvenation (FormaV)"]
+    },
+    {
+      "type": "spa_card",
+      "duration": 12,
+      "bg": "/media/Laser_Treatments.jpg",
+      "title": "Laser Treatments",
+      "subtitle": "Advanced laser & RF technology for smooth skin.",
+      "items": ["Laser Hair Reduction", "Laser Vein Reduction", "Laser Skin Tightening", "Skin Resurfacing", "Radiofrequency Treatments"]
+    },
+    {
+      "type": "spa_card",
+      "duration": 12,
+      "bg": "/media/PRP.jpg",
+      "title": "PRP",
+      "subtitle": "Regenerative treatments for skin + hair.",
+      "items": ["PRP Facial", "PRP Hair Restoration", "PRP Under Eyes"]
+    }
+  ],
+  "right_items": [
+    {
+      "type": "youtube",
+      "duration": 18,
+      "url": "https://www.youtube.com/embed?listType=playlist&list=UUInP4-sfglG9bYMwjGDlG4w"
+    },
+    {
+      "type": "instagram",
+      "duration": 18,
+      "url": "https://www.instagram.com/prestigemedspas/embed"
+    }
+  ]
+}

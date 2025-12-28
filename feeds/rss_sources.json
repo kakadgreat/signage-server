@@ -1,0 +1,24 @@
+{
+  "sources": [
+    {
+      "name": "Health News",
+      "url": "https://news.google.com/rss/search?q=health+news&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Medical News",
+      "url": "https://news.google.com/rss/search?q=medical+news&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "CDC Updates",
+      "url": "https://news.google.com/rss/search?q=CDC+health+updates&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "FDA Updates",
+      "url": "https://news.google.com/rss/search?q=FDA+press+release&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Diabetes News",
+      "url": "https://news.google.com/rss/search?q=diabetes+health+news&hl=en-US&gl=US&ceid=US:en"
+    }
+  ]
+}

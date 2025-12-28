@@ -1,0 +1,166 @@
+{
+  "theme": {
+    "accent": "#2cc6c4",
+    "titleColor": "#ffffff",
+    "textColor": "rgba(255,255,255,0.88)",
+    "mutedColor": "rgba(255,255,255,0.70)",
+    "cardBg": "#0b0b0b"
+  },
+  "defaults": {
+    "duration_sec": 12,
+    "fit": "cover",
+    "maxBullets": 6
+  },
+  "cards": [
+    {
+      "id": "hydrafacial",
+      "tag": "Advanced MedSpa Service",
+      "title": "Hydrafacial",
+      "subtitle": "Deep clean + hydrate + glow",
+      "bullets": [
+        "Cleanses and exfoliates",
+        "Extracts impurities",
+        "Hydrates and nourishes",
+        "Great for all skin types"
+      ],
+      "media_url": "https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2953/img-7.jpeg",
+      "duration_sec": 12,
+      "fit": "cover"
+    },
+    {
+      "id": "vampire-facial",
+      "tag": "Advanced MedSpa Service",
+      "title": "Vampire Facial",
+      "subtitle": "PRP + microneedling for collagen boost",
+      "bullets": [
+        "Improves texture and tone",
+        "Supports collagen production",
+        "Reduces fine lines",
+        "Minimal downtime"
+      ],
+      "media_url": "https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2953/img-8.jpeg",
+      "duration_sec": 12,
+      "fit": "cover"
+    },
+    {
+      "id": "chemical-peels",
+      "tag": "Facial Treatments",
+      "title": "Chemical Peels",
+      "subtitle": "Refresh and brighten your skin",
+      "bullets": [
+        "Improves discoloration",
+        "Targets acne and scarring",
+        "Smooths texture",
+        "Customized for your skin"
+      ],
+      "media_url": "https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2953/img-12.jpeg",
+      "duration_sec": 12,
+      "fit": "cover"
+    },
+    {
+      "id": "dermaplaning",
+      "tag": "Facial Treatments",
+      "title": "Dermaplaning",
+      "subtitle": "Instantly smoother and brighter skin",
+      "bullets": [
+        "Removes dead skin + peach fuzz",
+        "Improves makeup application",
+        "Boosts product absorption",
+        "No downtime"
+      ],
+      "media_url": "https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2953/img-5.jpeg",
+      "duration_sec": 12,
+      "fit": "cover"
+    },
+    {
+      "id": "microneedling",
+      "tag": "Facial Treatments",
+      "title": "Microneedling",
+      "subtitle": "Smoother texture, firmer skin",
+      "bullets": [
+        "Stimulates collagen",
+        "Improves scars and pores",
+        "Softens fine lines",
+        "Safe and effective"
+      ],
+      "media_url": "https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2953/img-4.jpeg",
+      "duration_sec": 12,
+      "fit": "cover"
+    },
+    {
+      "id": "threads",
+      "tag": "Facial Treatments",
+      "title": "Threads",
+      "subtitle": "Lift and tighten without surgery",
+      "bullets": [
+        "Instant lifting effect",
+        "Improves skin laxity",
+        "Stimulates collagen over time",
+        "Minimal downtime"
+      ],
+      "media_url": "https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2953/img-19.jpeg",
+      "duration_sec": 12,
+      "fit": "cover"
+    },
+    {
+      "id": "botox",
+      "tag": "Injectables",
+      "title": "Botox",
+      "subtitle": "Smooth lines, natural results",
+      "bullets": [
+        "Softens forehead lines",
+        "Reduces crow’s feet",
+        "Quick appointment",
+        "No downtime"
+      ],
+      "media_url": "/media/botox funny McKinzi (1).mp4",
+      "duration_sec": 15,
+      "fit": "contain"
+    },
+    {
+      "id": "fillers",
+      "tag": "Injectables",
+      "title": "Fillers",
+      "subtitle": "Restore volume + enhance features",
+      "bullets": [
+        "Cheeks, lips, jawline",
+        "Natural looking volume",
+        "Immediate results",
+        "Customized for you"
+      ],
+      "media_url": "https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2953/img-1.jpeg",
+      "duration_sec": 12,
+      "fit": "cover"
+    },
+    {
+      "id": "laser-hair",
+      "tag": "Laser Treatments",
+      "title": "Laser Hair Reduction",
+      "subtitle": "Smooth skin, long-term results",
+      "bullets": [
+        "Targets hair follicles safely",
+        "Works on multiple areas",
+        "Quick treatments",
+        "Series recommended"
+      ],
+      "media_url": "https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2953/img-3.jpeg",
+      "duration_sec": 12,
+      "fit": "cover"
+    },
+    {
+      "id": "body-contouring",
+      "tag": "Body Procedures",
+      "title": "Body Contouring (Evolve X)",
+      "subtitle": "Tone, tighten, sculpt",
+      "bullets": [
+        "Non-surgical body shaping",
+        "Targets stubborn areas",
+        "Improves tone and definition",
+        "Series recommended"
+      ],
+      "media_url": "https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2953/img-6.jpeg",
+      "duration_sec": 12,
+      "fit": "cover"
+    }
+  ]
+}

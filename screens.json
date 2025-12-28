@@ -1,0 +1,17 @@
+{
+  "canton-tv1": {
+    "playlist": "general",
+    "player_mode": "single",
+    "logo_url": "/media/pmgPrimaryCareLogo.jpg"
+  },
+  "canton-tv2": {
+    "playlist": "peds",
+    "player_mode": "single",
+    "logo_url": "/media/pmgPedsLogo.jpg"
+  },
+  "canton-tv3": {
+    "playlist": "zoned_demo",
+    "player_mode": "zones",
+    "logo_url": "/media/pmgSPALOGO.jpg"
+  }
+}

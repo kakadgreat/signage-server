@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "type": "image",
+      "title": "Follow us on Instagram @PrestigeMedSpas",
+      "image_url": "https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2953/img-5.jpeg",
+      "link_url": "https://www.instagram.com/prestigemedspas/?hl=en",
+      "duration_sec": 10
+    },
+    {
+      "type": "image",
+      "title": "New skincare specials available",
+      "image_url": "https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2953/img-6.jpeg",
+      "link_url": "https://www.instagram.com/prestigemedspas/?hl=en",
+      "duration_sec": 10
+    }
+  ]
+}

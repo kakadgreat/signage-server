@@ -1,0 +1,21 @@
+{
+  "rotation_sec": 12,
+  "offices": [
+    { "office_id": "canton", "name": "Prestige Medical Group - Canton", "address": "3755 Sixes Rd, Canton, GA 30114", "phone": "706-692-9768" },
+    { "office_id": "canton-peds", "name": "Prestige Pediatrics - Canton", "address": "3755 Sixes Rd, Canton, GA 30114", "phone": "706-692-9768" },
+    { "office_id": "canton-medspa", "name": "Prestige MedSpa - Canton", "address": "3755 Sixes Rd, Canton, GA 30114", "phone": "706-692-9768" },
+
+    { "office_id": "jasper", "name": "Prestige Medical Group - Jasper", "address": "51 Gordon Rd, Jasper, GA 30143", "phone": "706-692-9768" },
+    { "office_id": "jasper-peds", "name": "Prestige Pediatrics - Jasper", "address": "53 Gordon Rd, Jasper, GA 30143", "phone": "706-692-9768" },
+    { "office_id": "jasper-medspa", "name": "Prestige MedSpa - Jasper", "address": "51 Gordon Rd, Jasper, GA 30143", "phone": "706-692-9768" },
+
+    { "office_id": "rome", "name": "Prestige Medical Group - Rome", "address": "415 E 2nd Ave, Rome, GA 30161", "phone": "706-692-9768" },
+    { "office_id": "rome-medspa", "name": "Prestige MedSpa - Rome", "address": "415 E 2nd Ave, Rome, GA 30161", "phone": "706-692-9768" },
+
+    { "office_id": "roswell", "name": "Prestige Medical Group - Roswell", "address": "12020 Etris Rd, Roswell, GA 30075", "phone": "706-692-9768" },
+    { "office_id": "roswell-medspa", "name": "Prestige MedSpa - Roswell", "address": "12020 Etris Rd, Roswell, GA 30075", "phone": "706-692-9768" },
+
+    { "office_id": "woodstock", "name": "Prestige Medical Group - Woodstock", "address": "TBD, Woodstock, GA", "phone": "706-692-9768" },
+    { "office_id": "woodstock-peds", "name": "Prestige Pediatrics - Woodstock", "address": "TBD, Woodstock, GA", "phone": "706-692-9768" }
+  ]
+}
